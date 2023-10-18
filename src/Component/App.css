@@ -3,5 +3,12 @@
 }
 body {
     margin: 0;
+    background: url('../assets/bg.webp');
+    background-repeat: repeat;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
 }
 

@@ -2,15 +2,46 @@ import './Header.css'
 import logo from '../assets/logo.png'
 import cartIcon from '../assets/cart-icon.png'
 import {Link} from 'react-router-dom'
-function Header() {
+import dropdownIcon from '../assets/dropdown.svg'
+import { useEffect, useState } from 'react'
+function Menu({name, link, dropdownItem}) {
+    if (!dropdownItem) 
+        return <li><Link to={link}>{name}</Link></li>
+    
     return (
+
+            <li className='menu'>
+                        <Link to={link} className='dropdown'><span>{name}</span><img src={dropdownIcon} alt='dropdown icon' className='dropdown-sign'></img></Link>
+                        <div className='dropdown-content'>
+                        {dropdownItem.map((item) => <Link className='subMenu' name={item.name} key={item.link} to={item.link}>{item.name}</Link>)}
+                    </div>
+            </li>
+
+
+        )
+}
+
+function Header() {
+    const [shopCategory, setShopCategory] = useState(false)
+    const menuList = [
+        {name: 'Home', link: '/'},
+        {name: 'Shop', link: '/shop', dropdownItem: shopCategory},
+        {name: 'About Us', link: '/about-us'},
+    ]
+    useEffect(()=>{
+        fetch('https://fakestoreapi.com/products/categories')
+            .then(res=>res.json())
+            .then(json=>{
+                const formatData = json.map((item) => ({name: item, link: '/shop/'+item}))
+                setShopCategory(formatData)
+            })
+    }, [])
+    return shopCategory && (
         <header>
             <div id='logo'><Link to='/'><img src={logo} alt='logo' /></Link></div>
             <nav>
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/shop'>Shop</Link></li>
-                    <li><Link to='/about-us'>About Us</Link></li>
+                    {menuList.map((item) => <Menu name={item.name} key={item.link} link={item.link} dropdownItem={item.dropdownItem}></Menu>)}
                 </ul>
                 <div className='cart'>
                     <img src={cartIcon} alt='your cart' />

@@ -20,7 +20,6 @@
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    animation: banner-button-slide 700ms ease;
 }
 
 .banner button:hover {
@@ -38,12 +37,14 @@
     gap: 10px;
 }
 
-
+.banner-info a {
+    animation: banner-button-slide 700ms ease;
+}
 
 .banner-title {
     font-size: 70px;
     color: #fff;
-    animation: fade-in 700ms ease-in;
+    animation: fade-in 1s ease-in;
 }
 
 @keyframes fade-in {

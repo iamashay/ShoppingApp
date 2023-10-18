@@ -10,9 +10,7 @@ header {
     z-index: 1;
 }
 
-header a {
-        all: unset;
-}
+
 
 #logo img {
     width: 100px;
@@ -21,6 +19,8 @@ header a {
 nav {
     display: flex;
     gap: 30px;    
+    font-size: 20px;
+    text-transform: capitalize;
 }
 
 nav ul
@@ -53,6 +53,63 @@ gap: 40px;
 }
 
 nav li {
-    cursor: pointer;
-    font-size: 20px;
+    height: 100%;
+}
+
+nav li > a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-sign {
+    transition: 400ms;
+}
+
+.menu:hover .dropdown-sign {
+    rotate: -182deg;
+}
+
+.dropdown-content {
+    position: absolute;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    min-width: 160px;
+    display: none;
+    z-index: 1;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background: #e1e1e1;
+}
+
+.dropdown-content a {
+    padding: 6px;
+    transition: 200ms ease-in-out;
+}
+
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+
+.menu {
+    position: relative;
+}
+
+
+.menu:hover .dropdown-content {
+    display: flex;
+}
+
+
+.dropdown img {
+    height: 60%;
 }
