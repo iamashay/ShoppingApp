@@ -36,7 +36,7 @@ function Header() {
                 setShopCategory(formatData)
             })
     }, [])
-    return shopCategory && (
+    return (
         <header>
             <div id='logo'><Link to='/'><img src={logo} alt='logo' /></Link></div>
             <nav>
