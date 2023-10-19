@@ -12,7 +12,8 @@ const Router = () => {
       element: <App />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: "shop", element: <Shop /> },
+        { path: "shop/:name", element: <Shop /> },
+        { path: "shop/", element: <Shop /> },
       ]
     }
   ]);

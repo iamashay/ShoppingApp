@@ -1,0 +1,16 @@
+.shop-section {
+    width: 80%;
+}
+
+.shop-title {
+    color: white;
+    font-size: 40px;
+    text-shadow: -1px -2px 1px #000000e8;
+    text-transform: capitalize;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
