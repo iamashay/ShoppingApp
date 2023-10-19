@@ -3,7 +3,7 @@
     width: 140px;
     align-self: center;
     padding: 12px;
-    transition: all 500ms;
+    transition: all 400ms;
 }
 
 .item-image:hover {

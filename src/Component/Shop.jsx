@@ -20,12 +20,13 @@ function Shop() {
             <section className="shop-info shop-section">
                 <h2 className="shop-title">Shop {name && `: ${name}`}</h2>
             </section>
-            <section className="shop-items shop-section">
                 {
-                    !itemData.length ? <img src={spinnerGif} alt='spinner'></img>  :
-                    itemData.map((item) => <Item key={item.id} data={item}></Item>)              
+                    !itemData.length ? <img src={spinnerGif} style={{width: '65px'}} alt='spinner'></img>  :
+                    <section className="shop-items shop-section">
+                    {itemData.map((item) => <Item key={item.id} data={item}></Item>)}
+                    </section>
                 }
-            </section>
+
         </div>
     )
 }
