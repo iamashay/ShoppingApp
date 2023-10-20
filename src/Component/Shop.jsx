@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useParams, useOutletContext } from "react-router-dom"
 import './Shop.css'
 import { useEffect, useState } from "react"
 import Item from "./Item"
 import spinnerGif from '../assets/spinner.gif'
 
 function Shop() {
+    const {cart, addToCart} = useOutletContext()
+    console.log(cart)
     const { name } = useParams();
     const [itemData, setItemData] = useState([])
     useEffect(() => {
@@ -23,7 +25,7 @@ function Shop() {
                 {
                     !itemData.length ? <img src={spinnerGif} style={{width: '65px'}} alt='spinner'></img>  :
                     <section className="shop-items shop-section">
-                    {itemData.map((item) => <Item key={item.id} data={item}></Item>)}
+                    {itemData.map((item) => <Item key={item.id} data={item} addToCart={addToCart}></Item>)}
                     </section>
                 }
 

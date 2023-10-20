@@ -38,7 +38,7 @@ gap: 40px;
     position: relative;
 }
 
-.cart .cart-info {
+.cart .cart-tracker {
     position: absolute;
     border: 1px solid #fff;
     background: #36ae4e;
@@ -51,6 +51,7 @@ gap: 40px;
     left: 11px;
     font-weight: bold;
     font-size: 14px;
+    animation: rotate-fade-in 500ms ease-in-out;
 }
 
 nav li {
@@ -113,4 +114,25 @@ nav li > a {
 
 .dropdown img {
     height: 60%;
+}
+
+@keyframes rotate-fade-in {
+    0% {
+        rotate: 0deg;
+        opacity: 0;
+    }
+
+    33% {
+        rotate: 80deg;
+        opacity: 33%;
+    }
+
+    66% {
+        rotate: -80deg;
+        opacity: 66%;
+    }
+    100% {
+        rotate: 0deg;
+        opacity: 100%;
+    }
 }

@@ -16,7 +16,7 @@ function ReviewStar ({score, count}) {
     )
 }
 
-function Item({data}) {
+function Item({data, addToCart}) {
     const {title, price, rating, image} = data
     return (
         <div className='item-card'>
@@ -25,7 +25,7 @@ function Item({data}) {
                 <div className='item-name'>{abridgeText(title)}</div>
                 <ReviewStar count={rating.count} score={rating.rate}></ReviewStar>
                 <div className='item-price'>Rs. {price}</div>
-                <button className='add-cart'>Add To Cart</button>
+                <button className='add-cart' onClick={() => {addToCart(data)}} >Add To Cart</button>
             </div>
         </div>
     )

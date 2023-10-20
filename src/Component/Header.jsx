@@ -1,7 +1,7 @@
 import './Header.css'
 import logo from '../assets/logo.png'
 import cartIcon from '../assets/cart-icon.png'
-import {Link} from 'react-router-dom'
+import {Link, useOutletContext} from 'react-router-dom'
 import dropdownIcon from '../assets/dropdown.svg'
 import { useEffect, useState } from 'react'
 function Menu({name, link, dropdownItem}) {
@@ -21,7 +21,7 @@ function Menu({name, link, dropdownItem}) {
         )
 }
 
-function Header() {
+function Header({cart}) {
     const [shopCategory, setShopCategory] = useState(false)
     const menuList = [
         {name: 'Home', link: '/'},
@@ -45,7 +45,7 @@ function Header() {
                 </ul>
                 <div className='cart'>
                     <img src={cartIcon} alt='your cart' />
-                    <span className='cart-info'>1</span>
+                    {cart.length > 0 && <span className='cart-tracker'>{cart.length}</span>}
                 </div>
             </nav>
         </header>
