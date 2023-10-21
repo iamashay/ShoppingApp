@@ -47,7 +47,7 @@ input[type=number] {
         font-size: 25px;
     }
 
-    .normal-section {
-        width: 100%;
+    .shop-items {
+        width: 80%;
     }
 }
