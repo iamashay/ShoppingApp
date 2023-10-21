@@ -32,3 +32,9 @@
 .checkout-btn:hover {
     box-shadow: inset 0px 66px 0px 0 #650e0e8c;
 }
+
+@media (max-width: 600px) {
+    .cart-section {
+        width: 90%;
+    }
+}

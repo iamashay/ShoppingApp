@@ -9,6 +9,7 @@ header {
     color: #fff;
     z-index: 1;
     top: 0;
+    left: 0;
 }
 
 
@@ -135,5 +136,15 @@ nav li > a {
     100% {
         rotate: 0deg;
         opacity: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul{
+        gap: 25px;
+    }
+
+    nav {
+        gap: 10px;
     }
 }

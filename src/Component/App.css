@@ -13,7 +13,7 @@ a {
 }
 
 .page-container {
-    margin-top: 4%;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,4 +40,14 @@ input::-webkit-inner-spin-button { /* Hide number arrows*/
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 25px;
+    }
+
+    .normal-section {
+        width: 100%;
+    }
 }
