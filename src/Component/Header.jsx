@@ -26,7 +26,6 @@ function Header({cart}) {
     const menuList = [
         {name: 'Home', link: '/'},
         {name: 'Shop', link: '/shop', dropdownItem: shopCategory},
-        {name: 'About Us', link: '/about-us'},
     ]
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products/categories')
