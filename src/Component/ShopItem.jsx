@@ -1,4 +1,4 @@
-import './Item.css'
+import './ShopItem.css'
 import starImg from '../assets/star.png'
 const abridgeText = (text, count=40) => text.length <= count ? text : `${text.slice(0, count).trim()}...`
 
@@ -16,7 +16,7 @@ function ReviewStar ({score, count}) {
     )
 }
 
-function Item({data, addToCart}) {
+function ShopItem({data, addToCart}) {
     const {title, price, rating, image} = data
     return (
         <div className='item-card'>
@@ -31,4 +31,4 @@ function Item({data, addToCart}) {
     )
 }
 
-export default Item
+export default ShopItem

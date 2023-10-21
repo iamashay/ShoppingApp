@@ -1,7 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 35px;
+    padding: 6px 35px;
     align-items: center;
     background-color: #0000008a;
     position: fixed;
@@ -20,7 +20,7 @@ header {
 nav {
     display: flex;
     gap: 30px;    
-    font-size: 20px;
+    font-size: 18px;
     text-transform: capitalize;
 }
 
@@ -36,6 +36,7 @@ gap: 40px;
 .cart {
     cursor: pointer;
     position: relative;
+    align-self: center; 
 }
 
 .cart .cart-tracker {

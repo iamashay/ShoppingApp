@@ -11,19 +11,31 @@ function App() {
       let isExisting = false
       const newList = list.map((existingProduct) => {
         if (existingProduct.id === product.id) {
-          !existingProduct.count ? existingProduct.count = 1 : existingProduct.count++
           isExisting = true
+          return { ...existingProduct, count: existingProduct.count + 1 }
         }
         return existingProduct
       })
-      if (!isExisting) return [...list, product]
+      if (!isExisting) return [...list, {...product, count: 1}]
       console.log('new', newList)
       return newList
     })
   }
 
-  const deleteFromCart = (id) => {
-    setCart(list => list.filter((product)=> product.id != id))
+
+  const deleteFromCart = (product, isPermanentRemoval = false) => {
+    setCart(list => {
+      
+      if(isPermanentRemoval) return list.filter((existingProduct) => existingProduct.id !== product.id)
+
+      const newList = list.map((existingProduct) => {
+        if (existingProduct.id === product.id) {
+          return { ...existingProduct, count:  existingProduct.count - 1 }
+        }
+        return existingProduct
+      })
+      return newList
+    })
   }
   return (
   <>

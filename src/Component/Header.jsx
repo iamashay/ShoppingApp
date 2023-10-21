@@ -43,10 +43,10 @@ function Header({cart}) {
                 <ul>
                     {menuList.map((item) => <Menu name={item.name} key={item.link} link={item.link} dropdownItem={item.dropdownItem}></Menu>)}
                 </ul>
-                <div className='cart'>
+                <Link className='cart' to='/cart'>
                     <img src={cartIcon} alt='your cart' />
                     {cart.length > 0 && <span className='cart-tracker'>{cart.length}</span>}
-                </div>
+                </Link>
             </nav>
         </header>
     )

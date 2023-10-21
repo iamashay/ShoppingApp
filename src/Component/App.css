@@ -19,3 +19,25 @@ a {
     align-items: center;
     padding-bottom: 10px;
 }
+
+.normal-section {
+    width: 80%;
+}
+
+.section-title {
+    color: white;
+    font-size: 40px;
+    text-shadow: -1px -2px 1px #000000e8;
+    text-transform: capitalize;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { /* Hide number arrows*/
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

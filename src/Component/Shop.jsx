@@ -1,7 +1,7 @@
 import { useParams, useOutletContext } from "react-router-dom"
 import './Shop.css'
 import { useEffect, useState } from "react"
-import Item from "./Item"
+import Item from "./ShopItem"
 import spinnerGif from '../assets/spinner.gif'
 
 function Shop() {
@@ -19,12 +19,12 @@ function Shop() {
     }, [name])
     return (
         <div className='page-container'>
-            <section className="shop-info shop-section">
-                <h2 className="shop-title">Shop {name && `: ${name}`}</h2>
+            <section className="shop-info normal-section">
+                <h2 className="section-title">Shop {name && `: ${name}`}</h2>
             </section>
                 {
                     !itemData.length ? <img src={spinnerGif} style={{width: '65px'}} alt='spinner'></img>  :
-                    <section className="shop-items shop-section">
+                    <section className="shop-items normal-section">
                     {itemData.map((item) => <Item key={item.id} data={item} addToCart={addToCart}></Item>)}
                     </section>
                 }
