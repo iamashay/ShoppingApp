@@ -23,6 +23,7 @@ function Menu({name, link, dropdownItem}) {
 
 function Header({cart}) {
     const [shopCategory, setShopCategory] = useState(false)
+    const [showMenu, setShowMenu] = useState(false)
     const menuList = [
         {name: 'Home', link: '/'},
         {name: 'Shop', link: '/shop', dropdownItem: shopCategory},
@@ -36,17 +37,22 @@ function Header({cart}) {
             })
     }, [])
     return (
-        <header>
+        <header className={showMenu ? 'opendark' : ''}>
             <div id='logo'><Link to='/'><img src={logo} alt='logo' /></Link></div>
             <nav>
-                <ul>
+                <ul className={showMenu ? 'open' : ''}>
                     {menuList.map((item) => <Menu name={item.name} key={item.link} link={item.link} dropdownItem={item.dropdownItem}></Menu>)}
                 </ul>
-                <Link className='cart' to='/cart'>
+            </nav>
+            <Link className='cart' to='/cart'>
                     <img src={cartIcon} alt='your cart' />
                     {cart.length > 0 && <span className='cart-tracker'>{cart.length}</span>}
-                </Link>
-            </nav>
+            </Link>
+            <div className='responsive-menu' onClick={() => setShowMenu(!showMenu)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
     )
 }

@@ -10,6 +10,7 @@ header {
     z-index: 1;
     top: 0;
     left: 0;
+    transition: all 400ms;
 }
 
 
@@ -23,6 +24,8 @@ nav {
     gap: 30px;    
     font-size: 18px;
     text-transform: capitalize;
+    flex-grow: 1;
+    justify-content: end;
 }
 
 nav ul
@@ -118,6 +121,17 @@ nav li > a {
     height: 60%;
 }
 
+
+.responsive-menu {
+    display: none;
+}
+
+
+.responsive-menu span {
+    border: 1px solid #eee;
+    width: 20px;
+}
+
 @keyframes rotate-fade-in {
     0% {
         rotate: 0deg;
@@ -141,10 +155,37 @@ nav li > a {
 
 @media (max-width: 600px) {
     nav ul{
-        gap: 25px;
+        gap: 5px;
+        flex-direction: column;
+        display: none;
     }
 
-    nav {
-        gap: 10px;
+    nav ul.open {
+        display: flex
+    }
+
+    header.opendark {
+        background-color: #000000db;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .cart {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 10px 50px;
+    }
+    .responsive-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        /* top: 0; */
+        margin: 10px;
+        gap: 5px;
+        cursor: pointer;
     }
 }
